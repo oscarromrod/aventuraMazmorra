@@ -69,4 +69,7 @@ public class Enemigo extends Personaje{
                 break;
         }
     }
+
+    //-----------METODOS--------------
+
 }
