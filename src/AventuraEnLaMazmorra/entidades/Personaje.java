@@ -81,6 +81,14 @@ public abstract class Personaje {
 
     //---------------METODOS-----------------
 
+    public void recibirDanio(Integer danio){
+
+    }
+
+
+
+
+
     public void usarHabilidadEspecial(Personaje objetivo) {
 
     }
