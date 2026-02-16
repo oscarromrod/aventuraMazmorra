@@ -1,7 +1,7 @@
 package AventuraEnLaMazmorra.entidades;
 
 public enum TipoItem {
-    POCION_PEQUENA,
     POCION_GRANDE,
+    POCION_PEQUENA,
     ELIXIR,
 }
