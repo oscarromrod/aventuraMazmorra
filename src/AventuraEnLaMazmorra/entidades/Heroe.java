@@ -54,7 +54,7 @@ public class Heroe extends Personaje{
      *     (10)
      */
     private void iniTipoHeroe() {
-        switch (tipo) {
+        switch (this.tipo) {
             case GUERRERO:
                 this.puntosVidaMax = 100;
                 this.puntosVidaActual = 100;
@@ -72,6 +72,49 @@ public class Heroe extends Personaje{
                 this.puntosVidaActual = 80;
                 this.ataque = 25;
                 this.defensa = 10;
+                break;
+        }
+    }
+
+
+    public void usarHabilidadEspecial(Personaje objetivo) {
+
+
+
+        /*
+
+
+
+            Métodos:
+        void usarHabilidadEspecial(Personaje objetivo) :
+        GUERRERO: "Golpe Poderoso" - hace el doble de daño
+        MAGO: "Bola de Fuego" - hace daño a todos los enemigos (se le
+        pasa una lista)
+        ARQUERO: "Disparo Preciso" - ignora la defensa del enemigo
+        void ganarExperiencia(int exp) : suma experiencia, si llega a 100 sube
+        de nivel
+        void subirNivel() : aumenta stats (+20 vida, +5 ataque, +3 defensa),
+        reinicia exp a 0
+        void usarItem(Item item) : usa una poción del inventario
+         */
+
+        switch (this.tipo) {
+            case GUERRERO:
+                int damage = (this.ataque - objetivo.defensa) * 2 ;
+
+                if (damage <= 1) {
+                    damage = 1 ;
+                }
+
+                //objetivo.r
+
+
+                break;
+            case MAGO:
+
+                break;
+            case ARQUERO:
+
                 break;
         }
     }
