@@ -4,21 +4,6 @@ import java.util.ArrayList;
 
 public class Heroe extends Personaje{
 
-    /*
-    3. Clase Heroe (hereda de Personaje) (1.5 puntos)
-    Atributos adicionales:
-    TipoHeroe tipo
-    int nivel (empieza en 1)
-    int experiencia (empieza en 0)
-    ArrayList<Item> inventario
-    Constructor:
-    Según el TipoHeroe, establece stats diferentes:
-    GUERRERO: Vida alta (100), Ataque medio (20), Defensa alta (15)
-    MAGO: Vida baja (60), Ataque alto (30), Defensa baja (5)
-    ARQUERO: Vida media (80), Ataque medio (25), Defensa media
-    (10)
-     */
-
     //Atributos
     private TipoHeroe tipo;
     private Integer nivel;
@@ -33,6 +18,9 @@ public class Heroe extends Personaje{
         this.nivel = 1;
         this.experiencia = 0;
         this.inventario = new ArrayList<>();
+
+        this.iniTipoHeroe();
+
 
     }
 
@@ -58,5 +46,33 @@ public class Heroe extends Personaje{
         return inventario;
     }
 
-
+    /**
+     *   Según el TipoHeroe, establece stats diferentes:
+     *     GUERRERO: Vida alta (100), Ataque medio (20), Defensa alta (15)
+     *     MAGO: Vida baja (60), Ataque alto (30), Defensa baja (5)
+     *     ARQUERO: Vida media (80), Ataque medio (25), Defensa media
+     *     (10)
+     */
+    private void iniTipoHeroe() {
+        switch (tipo) {
+            case GUERRERO:
+                this.puntosVidaMax = 100;
+                this.puntosVidaActual = 100;
+                this.ataque = 20;
+                this.defensa = 15;
+                break;
+            case MAGO:
+                this.puntosVidaMax = 60;
+                this.puntosVidaActual = 60;
+                this.ataque = 30;
+                this.defensa = 5;
+                break;
+            case ARQUERO:
+                this.puntosVidaMax = 80;
+                this.puntosVidaActual = 80;
+                this.ataque = 25;
+                this.defensa = 10;
+                break;
+        }
+    }
 }
