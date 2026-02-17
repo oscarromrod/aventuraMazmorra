@@ -1,5 +1,7 @@
 package AventuraEnLaMazmorra.entidades;
 
+import java.util.ArrayList;
+
 public abstract class Personaje {
 
     protected String nombre;
@@ -8,6 +10,7 @@ public abstract class Personaje {
     protected Integer ataque;
     protected Integer defensa;
     protected boolean vivo;
+    protected ArrayList<Personaje>personajes = new ArrayList<>();
 
     public Personaje(String nombre, Integer puntosVidaMax, Integer puntosVidaActual, Integer ataque, Integer defensa, boolean vivo) {
         this.nombre = nombre;
@@ -16,6 +19,7 @@ public abstract class Personaje {
         this.ataque = ataque;
         this.defensa = defensa;
         this.vivo = true;
+        this.personajes = personajes;
     }
 
     public String getNombre() {
@@ -104,7 +108,5 @@ public abstract class Personaje {
         return false;
     }
 
-    public void usarHabilidadEspecial(Personaje objetivo) {
-
-    }
+    public abstract void usarHabilidadEspecial(Personaje objetivo, ArrayList<Personaje> personajes);
 }

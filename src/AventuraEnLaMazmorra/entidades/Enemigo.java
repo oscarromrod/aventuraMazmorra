@@ -1,5 +1,7 @@
 package AventuraEnLaMazmorra.entidades;
 
+import java.awt.font.TextHitInfo;
+
 public class Enemigo extends Personaje{
 
     private TipoEnemigo tipo;
@@ -71,5 +73,31 @@ public class Enemigo extends Personaje{
     }
 
     //-----------METODOS--------------
+
+
+    public void usarHabilidadEspecial(Personaje objetivo){
+
+        switch (tipo){
+
+            case GOBLIN -> {
+                IO.println("Golpe Rápido");
+                this.ataque = 16;
+                usarHabilidadEspecial(objetivo);
+                this.ataque = 8;
+            }
+            case ORCO -> {
+                IO.println("Grito de guerrar");
+                this.ataque = 25;
+                usarHabilidadEspecial(objetivo);
+                this.ataque = 15;
+            }
+            case DRAGON -> {
+                IO.println("Aliento de fuego");
+                this.ataque = 25;
+                usarHabilidadEspecial(objetivo);
+            }
+
+        }
+    }
 
 }
