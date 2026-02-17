@@ -108,6 +108,7 @@ public class Heroe extends Personaje{
 
             if (usarInventario.equals(item)) {
 
+
                 usarInventario.usar(this);
 
                 this.inventario.remove(item);
