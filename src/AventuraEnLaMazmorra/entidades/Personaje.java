@@ -103,6 +103,27 @@ public abstract class Personaje {
         return false;
     }
 
+    public void atacar(Personaje objetivo){
+
+    }
+
+    public void recibirDanio(Integer danio){
+
+    }
+
+    public void curar(int cantidad){
+        if (this.puntosVidaActual > 0 ){
+            this.puntosVidaActual *= cantidad;
+        }
+    }
+
+    public boolean estaVivo(){
+        if (this.vivo){
+            return true;
+        }
+        return false;
+    }
+
     public void usarHabilidadEspecial(Personaje objetivo) {
 
     }
