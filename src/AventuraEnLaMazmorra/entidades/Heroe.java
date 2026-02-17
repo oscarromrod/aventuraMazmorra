@@ -106,16 +106,33 @@ public class Heroe extends Personaje{
                     damage = 1 ;
                 }
 
-                //objetivo.r
+                objetivo.recibirDanio(damage);
 
 
                 break;
             case MAGO:
-
+                objetivo.recibirDanio(this.ataque);
                 break;
             case ARQUERO:
 
+                objetivo.recibirDanio(this.ataque);
                 break;
         }
+    }
+
+
+    public void ganarExperiencia(int exp) {
+
+        this.experiencia += exp ;
+
+        if(this.nivel >= 100) {
+
+        }
+
+    }
+
+
+    public void subirNivel() {
+
     }
 }
