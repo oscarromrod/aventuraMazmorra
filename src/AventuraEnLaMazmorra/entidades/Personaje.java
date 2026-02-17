@@ -14,10 +14,6 @@ public abstract class Personaje {
 
     public Personaje(String nombre) {
         this.nombre = nombre;
-        this.puntosVidaMax = puntosVidaMax;
-        this.puntosVidaActual = puntosVidaActual;
-        this.ataque = ataque;
-        this.defensa = defensa;
         this.vivo = true;
         this.personajes = personajes;
     }
