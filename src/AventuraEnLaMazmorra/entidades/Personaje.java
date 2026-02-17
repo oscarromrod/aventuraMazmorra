@@ -89,9 +89,10 @@ public abstract class Personaje {
 
     }
 
+    //FALTA LIMITAR PARA QUE NO PASE DEL MAXIMO DE VIDA!!!!!
     public void curar(int cantidad){
-        if (this.puntosVidaActual > 0 ){
-            this.puntosVidaActual *= cantidad;
+        if (this.puntosVidaActual > 0){
+            this.puntosVidaActual += cantidad;
         }
 
     }

@@ -39,7 +39,7 @@ public class Item{
 
     public void usar(Heroe heroe) {
 
-        if (tipo == TipoItem.POCION_PEQUENA) {
+        if (tipo ==  TipoItem.POCION_PEQUENA) {
             valorCuracion = 30;
             System.out.println(heroe.getNombre() + " usa una Poción Pequeña y recupera 30 HP.");
 
@@ -52,7 +52,6 @@ public class Item{
             System.out.println(heroe.getNombre() + " usa un Elixir y se cura completamente.");
         }
     }
-
 }
 
 

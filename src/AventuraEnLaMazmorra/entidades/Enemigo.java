@@ -72,4 +72,9 @@ public class Enemigo extends Personaje{
 
     //-----------METODOS--------------
 
+
+
+
+
+
 }
