@@ -14,6 +14,30 @@ public class Sala {
         this.completada = false;
     }
 
+    public Integer getNumeroSala() {
+        return numeroSala;
+    }
+
+    public void setNumeroSala(Integer numeroSala) {
+        this.numeroSala = numeroSala;
+    }
+
+    public ArrayList<Enemigo> getEnemigos() {
+        return enemigos;
+    }
+
+    public void setEnemigos(ArrayList<Enemigo> enemigos) {
+        this.enemigos = enemigos;
+    }
+
+    public Boolean getCompletada() {
+        return completada;
+    }
+
+    public void setCompletada(Boolean completada) {
+        this.completada = completada;
+    }
+
     public void generarEnemigos(){
         switch (numeroSala){
             case 1,2 -> {
