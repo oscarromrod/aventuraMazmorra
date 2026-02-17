@@ -11,8 +11,8 @@ public class Heroe extends Personaje{
     private ArrayList<Item> inventario;
 
 
-    public Heroe(String nombre, Integer puntosVidaMax, Integer puntosVidaActual, Integer ataque, Integer defensa, boolean vivo, TipoHeroe tipo) {
-        super(nombre, puntosVidaMax, puntosVidaActual, ataque, defensa, vivo);
+    public Heroe(String nombre, TipoHeroe tipo) {
+        super(nombre);
         this.tipo = tipo;
 
         this.nivel = 1;
