@@ -19,7 +19,9 @@ public class Combate {
 
     public void iniciarCombate() {
 
+        while (!this.heroes.isEmpty()) {
 
+        }
 
     }
 
@@ -41,9 +43,10 @@ public class Combate {
     }
 
 
-    public void combateTerminado() {
-
+    public boolean combateTerminado() {
+        return false ;
     }
+
 
     public void distribuirRecompensas() {
 
