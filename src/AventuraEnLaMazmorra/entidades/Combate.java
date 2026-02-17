@@ -9,6 +9,7 @@ public class Combate {
     private  Sala sala;
     private  int turno;
 
+
     public Combate(Sala sala, int turno) {
         this.sala = sala;
         this.turno = turno;
@@ -19,11 +20,36 @@ public class Combate {
 
     public void iniciarCombate() {
 
+        while (!this.heroes.isEmpty()) {
+
+        }
+
     }
 
 
 
     public void turnoHeroes() {
+
+    }
+
+
+    public void turnoEnemigos() {
+
+
+    }
+
+
+    public void mostrarEstadoCombate() {
+
+    }
+
+
+    public boolean combateTerminado() {
+        return false ;
+    }
+
+
+    public void distribuirRecompensas() {
 
     }
 
