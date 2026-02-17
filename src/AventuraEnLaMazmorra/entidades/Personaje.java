@@ -15,7 +15,7 @@ public abstract class Personaje {
         this.puntosVidaActual = puntosVidaActual;
         this.ataque = ataque;
         this.defensa = defensa;
-        this.vivo = vivo;
+        this.vivo = true;
     }
 
     public String getNombre() {
@@ -81,13 +81,27 @@ public abstract class Personaje {
 
     //---------------METODOS-----------------
 
+    public void atacar(Personaje objetivo){
+
+    }
+
     public void recibirDanio(Integer danio){
 
     }
 
+    public void curar(int cantidad){
+        if (this.puntosVidaActual > 0 ){
+            this.puntosVidaActual *= cantidad;
+        }
 
+    }
 
-
+    public boolean estaVivo(){
+        if (this.vivo){
+            return true;
+        }
+        return false;
+    }
 
     public void usarHabilidadEspecial(Personaje objetivo) {
 
