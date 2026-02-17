@@ -9,7 +9,6 @@ public class Enemigo extends Personaje{
 
     public Enemigo(String nombre, TipoEnemigo tipo) {
         super(nombre);
-        this.expOtorgada = expOtorgada;
         this.tipo = tipo;
         this.iniTipoEnemigo();
         this.personajes = new ArrayList<Personaje>(personajes);
