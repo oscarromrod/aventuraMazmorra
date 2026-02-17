@@ -98,7 +98,10 @@ public abstract class Personaje {
     }
 
     public void recibirDanio(Integer danio){
-
+        this.puntosVidaActual -= danio;
+        if (this.puntosVidaActual <= 0){
+            this.vivo = true;
+        }
     }
 
     //FALTA LIMITAR PARA QUE NO PASE DEL MAXIMO DE VIDA!!!!!
