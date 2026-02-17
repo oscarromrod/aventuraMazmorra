@@ -12,7 +12,7 @@ public abstract class Personaje {
     protected boolean vivo;
     protected ArrayList<Personaje>personajes = new ArrayList<>();
 
-    public Personaje(String nombre, Integer puntosVidaMax, Integer puntosVidaActual, Integer ataque, Integer defensa, boolean vivo) {
+    public Personaje(String nombre) {
         this.nombre = nombre;
         this.puntosVidaMax = puntosVidaMax;
         this.puntosVidaActual = puntosVidaActual;
