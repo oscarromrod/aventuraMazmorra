@@ -38,7 +38,22 @@ public class Combate {
     }
 
 
+    /**
+     *  muestra vida de héroes y enemigos
+     */
     public void mostrarEstadoCombate() {
+
+        for (Heroe hero : this.heroes) {
+
+            IO.println(hero.getNombre() + ": " + hero.getPuntosVidaActual() + " HP");
+
+        }
+
+        for(Enemigo enemigo : this.sala.getEnemigos()) {
+
+            IO.println(enemigo.getNombre() + ": " + enemigo.getPuntosVidaActual() + " HP");
+
+        }
 
     }
 
