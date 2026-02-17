@@ -77,31 +77,6 @@ public class Heroe extends Personaje{
     }
 
 
-    public void usarHabilidadEspecial(Personaje objetivo) {
-
-
-        switch (this.tipo) {
-            case GUERRERO:
-                int damage = (this.ataque - objetivo.defensa) * 2 ;
-
-                if (damage <= 1) {
-                    damage = 1 ;
-                }
-
-                objetivo.recibirDanio(damage);
-
-
-                break;
-            case MAGO:
-                objetivo.recibirDanio(this.ataque);
-                break;
-            case ARQUERO:
-
-                objetivo.recibirDanio(this.ataque);
-                break;
-        }
-    }
-
 
     public void ganarExperiencia(int exp) {
 
@@ -144,6 +119,29 @@ public class Heroe extends Personaje{
 
     @Override
     public void usarHabilidadEspecial(Personaje objetivo, ArrayList<Personaje> personajes) {
+        switch (this.tipo) {
+            case GUERRERO:
+                int damage = (this.ataque - objetivo.defensa) * 2 ;
 
+                if (damage <= 1) {
+                    damage = 1 ;
+                }
+
+                objetivo.recibirDanio(damage);
+
+
+                break;
+            case MAGO:
+
+                for (Personaje obj : personajes) {
+                    obj.recibirDanio(this.ataque);
+                }
+
+                break;
+            case ARQUERO:
+
+                objetivo.recibirDanio(this.ataque);
+                break;
+        }
     }
 }
