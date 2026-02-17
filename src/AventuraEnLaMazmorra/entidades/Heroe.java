@@ -75,4 +75,8 @@ public class Heroe extends Personaje{
                 break;
         }
     }
+
+    public void usarItem (Item item) {
+    }
+
 }
