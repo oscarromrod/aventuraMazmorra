@@ -1,5 +1,6 @@
 package AventuraEnLaMazmorra.entidades;
 
+import javax.swing.plaf.PanelUI;
 import java.util.ArrayList;
 
 public class Sala {
@@ -76,10 +77,21 @@ public class Sala {
 
     }
     public Boolean todosENemigosMuertos(Enemigo enemigo){
-        if (){
-            return true;
+        for (Enemigo enemigos: enemigos) {
+            if (enemigos.puntosVidaActual <= 0)
+                return true;
         }
         return false;
+    }
+
+    public ArrayList<Enemigo> getEnemigosVivos(Enemigo enemigo){
+        ArrayList<Enemigo>enemigosVivos = new ArrayList<>();
+        for (Enemigo enemigoV: enemigos){
+            if (enemigoV.puntosVidaActual >= 0){
+                enemigosVivos.add(enemigoV);
+            }
+        }
+        return enemigosVivos;
     }
 
 }
