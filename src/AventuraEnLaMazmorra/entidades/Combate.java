@@ -43,6 +43,9 @@ public class Combate {
      */
     public void mostrarEstadoCombate() {
 
+        IO.println("*****************************************************");
+        IO.println("mostrar estado de Combate: ");
+
         for (Heroe hero : this.heroes) {
 
             IO.println(hero.getNombre() + ": " + hero.getPuntosVidaActual() + " HP");
@@ -54,7 +57,7 @@ public class Combate {
             IO.println(enemigo.getNombre() + ": " + enemigo.getPuntosVidaActual() + " HP");
 
         }
-
+        IO.println("*****************************************************");
     }
 
 
