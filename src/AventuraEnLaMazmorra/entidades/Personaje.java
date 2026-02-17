@@ -94,6 +94,7 @@ public abstract class Personaje {
     //---------------METODOS-----------------
 
     public void atacar(Personaje objetivo){
+        this.ataque  = (ataque + 1) - objetivo.defensa;
 
     }
 
