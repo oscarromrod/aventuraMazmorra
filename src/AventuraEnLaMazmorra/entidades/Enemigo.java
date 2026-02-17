@@ -11,8 +11,8 @@ public class Enemigo extends Personaje{
         super(nombre, puntosVidaMax, puntosVidaActual, ataque, defensa, vivo);
         this.expOtorgada = expOtorgada;
         this.tipo = tipo;
-
         this.iniTipoEnemigo();
+        this.personajes = new ArrayList<Personaje>(personajes);
     }
 
     public TipoEnemigo getTipo() {
@@ -30,6 +30,7 @@ public class Enemigo extends Personaje{
     public void setExpOtorgada(Integer expOtorgada) {
         this.expOtorgada = expOtorgada;
     }
+
 
     @Override
     public String toString() {

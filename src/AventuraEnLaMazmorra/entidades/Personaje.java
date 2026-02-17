@@ -70,6 +70,14 @@ public abstract class Personaje {
         this.vivo = vivo;
     }
 
+    public ArrayList<Personaje> getPersonajes() {
+        return personajes;
+    }
+
+    public void setPersonajes(ArrayList<Personaje> personajes) {
+        this.personajes = personajes;
+    }
+
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Personaje{");
