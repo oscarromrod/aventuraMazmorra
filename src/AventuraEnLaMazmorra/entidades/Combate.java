@@ -13,5 +13,10 @@ public class Combate {
     private  Sala sala;
     private  int turno;
 
+    public Combate(Sala sala, int turno) {
+        this.sala = sala;
+        this.turno = turno;
 
+        this.heroes = new ArrayList<>();
+    }
 }
