@@ -19,6 +19,8 @@ public class Combate {
 
     public void iniciarCombate() {
 
+
+
     }
 
 
@@ -28,5 +30,22 @@ public class Combate {
     }
 
 
+    public void turnoEnemigos() {
 
+
+    }
+
+
+    public void mostrarEstadoCombate() {
+
+    }
+
+
+    public void combateTerminado() {
+
+    }
+
+    public void distribuirRecompensas() {
+
+    }
 }
