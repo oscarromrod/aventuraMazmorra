@@ -80,24 +80,6 @@ public class Heroe extends Personaje{
     public void usarHabilidadEspecial(Personaje objetivo) {
 
 
-
-        /*
-
-
-
-            Métodos:
-        void usarHabilidadEspecial(Personaje objetivo) :
-        GUERRERO: "Golpe Poderoso" - hace el doble de daño
-        MAGO: "Bola de Fuego" - hace daño a todos los enemigos (se le
-        pasa una lista)
-        ARQUERO: "Disparo Preciso" - ignora la defensa del enemigo
-        void ganarExperiencia(int exp) : suma experiencia, si llega a 100 sube
-        de nivel
-        void subirNivel() : aumenta stats (+20 vida, +5 ataque, +3 defensa),
-        reinicia exp a 0
-        void usarItem(Item item) : usa una poción del inventario
-         */
-
         switch (this.tipo) {
             case GUERRERO:
                 int damage = (this.ataque - objetivo.defensa) * 2 ;
@@ -106,16 +88,62 @@ public class Heroe extends Personaje{
                     damage = 1 ;
                 }
 
-                //objetivo.r
+                objetivo.recibirDanio(damage);
 
 
                 break;
             case MAGO:
-
+                objetivo.recibirDanio(this.ataque);
                 break;
             case ARQUERO:
 
+                objetivo.recibirDanio(this.ataque);
                 break;
         }
+    }
+
+
+    public void ganarExperiencia(int exp) {
+
+        this.experiencia += exp ;
+
+        if(this.nivel >= 100) {
+
+        }
+
+    }
+
+
+    public void subirNivel() {
+
+        this.experiencia = 0;
+        this.nivel++;
+
+        this.puntosVidaMax +=  20;
+        this.ataque += 5 ;
+        this.defensa += 3 ;
+
+        this.puntosVidaActual = this.puntosVidaMax ;
+    }
+
+
+    public void usarItem(Item item) {
+
+        for (Item usarInventario: this.inventario) {
+
+            if (usarInventario.equals(item)) {
+
+                usarInventario.usar(this);
+
+                this.inventario.remove(item);
+
+            }
+
+        }
+    }
+
+    @Override
+    public void usarHabilidadEspecial(Personaje objetivo, ArrayList<Personaje> personajes) {
+
     }
 }

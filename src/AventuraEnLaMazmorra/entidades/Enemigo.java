@@ -1,6 +1,6 @@
 package AventuraEnLaMazmorra.entidades;
 
-import java.awt.font.TextHitInfo;
+import java.util.ArrayList;
 
 public class Enemigo extends Personaje{
 
@@ -46,6 +46,31 @@ public class Enemigo extends Personaje{
         return sb.toString();
     }
 
+    @Override
+    public void usarHabilidadEspecial(Personaje objetivo, ArrayList<Personaje> personajes) {
+        switch (tipo){
+
+            case GOBLIN -> {
+                IO.println("Golpe Rápido");
+                this.ataque = 16;
+                usarHabilidadEspecial(objetivo,null);
+                this.ataque = 8;
+            }
+            case ORCO -> {
+                IO.println("Grito de guerrar");
+                this.ataque = 25;
+                usarHabilidadEspecial(objetivo,null);
+                this.ataque = 15;
+            }
+            case DRAGON -> {
+                IO.println("Aliento de fuego");
+                this.ataque = 25;
+                usarHabilidadEspecial(objetivo,personajes);
+            }
+
+        }
+    }
+
     private void iniTipoEnemigo() {
         switch (tipo) {
             case GOBLIN:
@@ -73,31 +98,5 @@ public class Enemigo extends Personaje{
     }
 
     //-----------METODOS--------------
-
-
-    public void usarHabilidadEspecial(Personaje objetivo){
-
-        switch (tipo){
-
-            case GOBLIN -> {
-                IO.println("Golpe Rápido");
-                this.ataque = 16;
-                usarHabilidadEspecial(objetivo);
-                this.ataque = 8;
-            }
-            case ORCO -> {
-                IO.println("Grito de guerrar");
-                this.ataque = 25;
-                usarHabilidadEspecial(objetivo);
-                this.ataque = 15;
-            }
-            case DRAGON -> {
-                IO.println("Aliento de fuego");
-                this.ataque = 25;
-                usarHabilidadEspecial(objetivo);
-            }
-
-        }
-    }
 
 }
