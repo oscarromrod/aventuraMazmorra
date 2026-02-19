@@ -13,10 +13,11 @@ public class Combate {
     private Sala sala;
     private Integer turno;
 
-    public Combate(Sala sala, Integer turno) {
+    public Combate(Sala sala, ArrayList<Heroe> heroes) {
+
+        this.heroes = heroes;
         this.sala = sala;
-        this.turno = turno;
-        this.heroes = new ArrayList<>();
+        this.turno = 1;
     }
 
 
@@ -24,10 +25,9 @@ public class Combate {
 
     public void iniciarCombate() {
 
-        int contador = 0;
 
         while (true) {
-            IO.println("Turno " + contador);
+            IO.println("Turno " + this.turno);
 
             this.mostrarEstadoCombate();
 
@@ -45,7 +45,7 @@ public class Combate {
                 break;
             }
 
-            contador++;
+            this.turno++;
         }
 
 
