@@ -84,6 +84,35 @@ public class Combate {
 
 
     public void distribuirRecompensas() {
+        int sumExperncia = 0, gananExp = 0;
+        ArrayList<Heroe> heroesViven = new ArrayList<>();
+
+        try {
+            for (Enemigo enemigo : this.sala.getEnemigos()) {
+                sumExperncia += enemigo.getExpOtorgada();
+            }
+
+
+            for (Heroe hero : this.heroes) {
+                if (hero.estaVivo()) {
+                    heroesViven.add(hero);
+                }
+            }
+
+
+            gananExp = sumExperncia / heroesViven.size();
+
+            for (Heroe hero : heroesViven) {
+                hero.ganarExperiencia(gananExp);
+                IO.println(hero.getNombre() +" : gana puntos es "+ hero.getExperiencia() +" exp");
+            }
+
+            this.heroes.addAll(heroesViven);
+
+        } catch (Exception e) {
+            IO.println("No hay puntos de distribución");
+        }
+
 
     }
 }
