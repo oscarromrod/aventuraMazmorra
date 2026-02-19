@@ -84,6 +84,7 @@ public class Heroe extends Personaje{
 
         if(this.nivel >= 100) {
             this.subirNivel();
+
         }
 
     }
