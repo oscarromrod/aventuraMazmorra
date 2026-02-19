@@ -25,7 +25,6 @@ public class Combate {
     public void iniciarCombate() {
 
         while (!this.combateTerminado()) {
-
         }
 
     }
