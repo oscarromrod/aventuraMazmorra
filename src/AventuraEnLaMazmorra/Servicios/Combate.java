@@ -103,12 +103,14 @@ public class Combate {
         IO.println("mostrar estado de Combate: ");
 
         IO.println("Heroes: ");
+
         for (Heroe hero : this.heroes) {
 
             IO.println(hero.getNombre() + ": " + hero.getPuntosVidaActual() + " HP");
 
         }
         IO.println("Enemigos: ");
+
         for(Enemigo enemigo : this.sala.getEnemigos()) {
 
             IO.println(enemigo.getNombre() + ": " + enemigo.getPuntosVidaActual() + " HP");
@@ -163,7 +165,6 @@ public class Combate {
         } catch (Exception e) {
             IO.println("No hay puntos de distribución");
         }
-
 
     }
 }
