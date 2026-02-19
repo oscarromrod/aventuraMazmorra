@@ -33,8 +33,17 @@ public class Combate {
 
     public void turnoHeroes() {
 
-    }
+        for (Heroe hero : this.heroes) {
 
+            if (hero.estaVivo()) {
+                for(Enemigo enemigo : this.sala.getEnemigos()) {
+                    hero.atacar(enemigo);
+                    IO.println("El héroe " + hero.getNombre() + "atacó al enemigo "+ enemigo.getNombre());
+                }
+            }
+
+        }
+    }
 
     public void turnoEnemigos() {
 
@@ -48,6 +57,7 @@ public class Combate {
 
                     if (enemigo.isVivo()) {
                         enemigo.atacar(heroe);
+                        IO.println("El enemigo " + enemigo.getNombre() + "atacó al héroe "+ heroe.getNombre());
                     }
 
                     break;
