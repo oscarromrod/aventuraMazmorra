@@ -11,14 +11,15 @@ public class Combate {
 
     private ArrayList<Heroe> heroes;
     private Sala sala;
-    private  Integer turno;
+    private Integer turno;
 
     public Combate(Sala sala, Integer turno) {
         this.sala = sala;
         this.turno = turno;
-
         this.heroes = new ArrayList<>();
     }
+
+
 
 
     public void iniciarCombate() {
@@ -66,6 +67,8 @@ public class Combate {
 
 
     public boolean combateTerminado() {
+
+
         return false ;
     }
 
