@@ -14,7 +14,6 @@ public class Combate {
     private Integer turno;
 
     public Combate(Sala sala, ArrayList<Heroe> heroes) {
-
         this.heroes = heroes;
         this.sala = sala;
         this.turno = 1;
