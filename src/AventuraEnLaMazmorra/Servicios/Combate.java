@@ -24,7 +24,29 @@ public class Combate {
 
     public void iniciarCombate() {
 
-        while (!this.combateTerminado()) {
+        int contador = 0;
+
+        while (true) {
+            IO.println("Turno " + contador);
+
+            this.mostrarEstadoCombate();
+
+            this.turnoHeroes();
+
+
+            if (this.combateTerminado()) {
+                break;
+            }
+
+
+            this.turnoEnemigos();
+
+
+            if (this.combateTerminado()) {
+                break;
+            }
+
+            contador++;
         }
 
     }
