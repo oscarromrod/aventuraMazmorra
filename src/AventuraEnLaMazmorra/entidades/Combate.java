@@ -19,7 +19,7 @@ public class Combate {
 
     public void iniciarCombate() {
 
-        while (!this.heroes.isEmpty()) {
+        while (!this.combateTerminado()) {
 
         }
 
