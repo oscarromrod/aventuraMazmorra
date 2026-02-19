@@ -33,14 +33,38 @@ public class Juego {
         Sala sala4 = new Sala(4);
         Sala sala5 = new Sala(5);
 
-        Heroe gerrero1 = new Heroe("Felix", TipoHeroe.GUERRERO);
+        IO.println("Generando salas ...");
+        salas.add(sala1);
+        salas.add(sala2);
+        salas.add(sala3);
+        salas.add(sala4);
+        salas.add(sala5);
+
+        Heroe guerrero1 = new Heroe("Felix", TipoHeroe.GUERRERO);
         Heroe mago1 = new Heroe("Jesus", TipoHeroe.MAGO);
         Heroe arquero1 = new Heroe("Moha", TipoHeroe.ARQUERO);
 
-        Item pocionPequena1 = new Item("Pocion pequeña", TipoItem.POCION_PEQUENA);
-        Item pocionPequena2 = new Item("Pocion pequeña", TipoItem.POCION_PEQUENA);
-        Item pocionGrande1 = new Item("Pocion grande", TipoItem.POCION_GRANDE);
-        Item pocionElixir1 = new Item("Elixir", TipoItem.ELIXIR);
+        IO.println("Creando equipo predetrminado ...");
+        equipo.add(guerrero1);
+        equipo.add(mago1);
+        equipo.add(arquero1);
+
+        Item pocionPequena = new Item("Pocion pequeña", TipoItem.POCION_PEQUENA);
+        Item pocionGrande = new Item("Pocion grande", TipoItem.POCION_GRANDE);
+        Item pocionElixir = new Item("Elixir", TipoItem.ELIXIR);
+
+        IO.println("Agregando pociones al inventario ...");
+        guerrero1.agregarItemInventario(pocionPequena);
+        guerrero1.agregarItemInventario(pocionGrande);
+        guerrero1.agregarItemInventario(pocionElixir);
+
+        mago1.agregarItemInventario(pocionPequena);
+        mago1.agregarItemInventario(pocionGrande);
+        mago1.agregarItemInventario(pocionElixir);
+
+        arquero1.agregarItemInventario(pocionPequena);
+        arquero1.agregarItemInventario(pocionGrande);
+        arquero1.agregarItemInventario(pocionElixir);
 
      }
 
@@ -74,6 +98,11 @@ public class Juego {
             }
 
         }while(true);
+
+     }
+
+
+     public void verificarEstadoJuego(){
 
      }
 
