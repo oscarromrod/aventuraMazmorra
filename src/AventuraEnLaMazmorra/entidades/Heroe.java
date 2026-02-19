@@ -83,7 +83,7 @@ public class Heroe extends Personaje{
         this.experiencia += exp ;
 
         if(this.nivel >= 100) {
-
+            this.subirNivel();
         }
 
     }
