@@ -24,8 +24,8 @@ public class Combate {
 
     public void iniciarCombate() {
 
-
-        while (true) {
+        boolean prueba = true;
+        do{
             IO.println("Turno " + this.turno);
 
             this.mostrarEstadoCombate();
@@ -34,6 +34,7 @@ public class Combate {
 
 
             if (this.combateTerminado()) {
+                prueba  = false;
                 break;
             }
 
@@ -41,11 +42,11 @@ public class Combate {
 
 
             if (this.combateTerminado()) {
+                prueba = false;
                 break;
             }
-
             this.turno++;
-        }
+        }while (prueba = true);
 
 
         if (this.sala.getEnemigosVivos().size() <= 0) {
@@ -119,14 +120,20 @@ public class Combate {
 
     public boolean combateTerminado() {
 
-        boolean todoHeroesEstaMuertos = true,todoEnemigosEstaMuertos = true;
+        boolean todoHeroesEstaMuertos = false ,todoEnemigosEstaMuertos = false;
 
         for (Heroe hero : this.heroes) {
-            todoHeroesEstaMuertos = !hero.estaVivo();
+
+            if (!hero.estaVivo()) {
+                todoHeroesEstaMuertos = true;
+            }
         }
 
         for (Enemigo enemigo : this.sala.getEnemigos()) {
-            todoEnemigosEstaMuertos = !enemigo.estaVivo();
+
+            if (!enemigo.estaVivo()) {
+                todoEnemigosEstaMuertos = true;
+            }
         }
 
         return todoHeroesEstaMuertos || todoEnemigosEstaMuertos;
