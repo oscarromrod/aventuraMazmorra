@@ -68,7 +68,7 @@ public class Juego {
                     IO.println("Que pocion quieres usar");
 
                 case 3:
-
+                    IO.println("Ahora se descansa");
 
                 case 4;
 
