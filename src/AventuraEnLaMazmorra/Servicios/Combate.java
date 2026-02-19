@@ -39,6 +39,27 @@ public class Combate {
     public void turnoEnemigos() {
 
 
+        for(Enemigo enemigo : this.sala.getEnemigos()) {
+
+            while (true) {
+                try {
+                    int herosRandom = (int) (Math.random() * this.heroes.size());
+                    Heroe heroe = this.heroes.get(herosRandom);
+
+                    if (enemigo.isVivo()) {
+                        enemigo.atacar(heroe);
+                    }
+
+                    break;
+
+                } catch (Exception e) {
+                    continue;
+                }
+            }
+
+
+        }
+
     }
 
 
