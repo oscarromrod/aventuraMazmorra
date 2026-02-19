@@ -83,6 +83,7 @@ public class Heroe extends Personaje{
         this.experiencia += exp ;
 
         if(this.nivel >= 100) {
+            this.subirNivel();
 
         }
 
@@ -116,6 +117,10 @@ public class Heroe extends Personaje{
             }
 
         }
+    }
+    public ArrayList<Item> agregarItemInventario(Item item){
+        this.inventario.add(item);
+        return inventario;
     }
 
     @Override

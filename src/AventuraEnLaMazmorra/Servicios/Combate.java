@@ -24,8 +24,7 @@ public class Combate {
 
     public void iniciarCombate() {
 
-        while (!this.heroes.isEmpty()) {
-
+        while (!this.combateTerminado()) {
         }
 
     }
@@ -51,29 +50,68 @@ public class Combate {
         IO.println("*****************************************************");
         IO.println("mostrar estado de Combate: ");
 
+        IO.println("Heroes: ");
         for (Heroe hero : this.heroes) {
 
             IO.println(hero.getNombre() + ": " + hero.getPuntosVidaActual() + " HP");
 
         }
-
+        IO.println("Enemigos: ");
         for(Enemigo enemigo : this.sala.getEnemigos()) {
 
             IO.println(enemigo.getNombre() + ": " + enemigo.getPuntosVidaActual() + " HP");
 
         }
-        IO.println("*****************************************************");
+        IO.println("******************************************************");
     }
 
 
     public boolean combateTerminado() {
 
+        boolean todoHeroesEstaMuertos = true,todoEnemigosEstaMuertos = true;
 
-        return false ;
+        for (Heroe hero : this.heroes) {
+            todoHeroesEstaMuertos = !hero.estaVivo();
+        }
+
+        for (Enemigo enemigo : this.sala.getEnemigos()) {
+            todoEnemigosEstaMuertos = !enemigo.estaVivo();
+        }
+
+        return todoHeroesEstaMuertos || todoEnemigosEstaMuertos;
     }
 
 
     public void distribuirRecompensas() {
+        int sumExperncia = 0, gananExp = 0;
+        ArrayList<Heroe> heroesViven = new ArrayList<>();
+
+        try {
+            for (Enemigo enemigo : this.sala.getEnemigos()) {
+                sumExperncia += enemigo.getExpOtorgada();
+            }
+
+
+            for (Heroe hero : this.heroes) {
+                if (hero.estaVivo()) {
+                    heroesViven.add(hero);
+                }
+            }
+
+
+            gananExp = sumExperncia / heroesViven.size();
+
+            for (Heroe hero : heroesViven) {
+                hero.ganarExperiencia(gananExp);
+                IO.println(hero.getNombre() +" : gana puntos es "+ hero.getExperiencia() +" exp");
+            }
+
+            this.heroes.addAll(heroesViven);
+
+        } catch (Exception e) {
+            IO.println("No hay puntos de distribución");
+        }
+
 
     }
 }
