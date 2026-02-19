@@ -49,6 +49,14 @@ public class Combate {
             contador++;
         }
 
+
+        if (this.sala.getEnemigosVivos().size() <= 0) {
+            System.out.println("¡مبروك! تم تطهير الغرفة.");
+            distribuirRecompensas(); // توزيع الخبرة
+        } else {
+            System.out.println("¡للأسف! سقط جميع الأبطال... نهاية اللعبة.");
+        }
+
     }
 
 

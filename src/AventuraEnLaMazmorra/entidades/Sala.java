@@ -76,7 +76,7 @@ public class Sala {
         }
 
     }
-    public Boolean todosENemigosMuertos(Enemigo enemigo){
+    public Boolean todosENemigosMuertos(){
         for (Enemigo enemigos: enemigos) {
             if (enemigos.puntosVidaActual <= 0)
                 return true;
@@ -84,7 +84,7 @@ public class Sala {
         return false;
     }
 
-    public ArrayList<Enemigo> getEnemigosVivos(Enemigo enemigo){
+    public ArrayList<Enemigo> getEnemigosVivos(){
         ArrayList<Enemigo>enemigosVivos = new ArrayList<>();
         for (Enemigo enemigoV: enemigos){
             if (enemigoV.puntosVidaActual >= 0){
