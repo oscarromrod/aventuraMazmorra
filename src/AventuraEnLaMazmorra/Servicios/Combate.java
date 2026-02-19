@@ -51,10 +51,10 @@ public class Combate {
 
 
         if (this.sala.getEnemigosVivos().size() <= 0) {
-            System.out.println("¡مبروك! تم تطهير الغرفة.");
-            distribuirRecompensas(); // توزيع الخبرة
+            System.out.println("¡Felicitaciones a los ganadores, son los heroes!");
+            this.distribuirRecompensas();
         } else {
-            System.out.println("¡للأسف! سقط جميع الأبطال... نهاية اللعبة.");
+            System.out.println("Los enemigos son los ganadores");
         }
 
     }
