@@ -77,21 +77,12 @@ public class Combate {
 
         for(Enemigo enemigo : this.sala.getEnemigos()) {
 
-            while (true) {
-                try {
-                    int herosRandom = (int) (Math.random() * this.heroes.size());
-                    Heroe heroe = this.heroes.get(herosRandom);
+            int herosRandom = (int) (Math.random() * this.heroes.size());
+            Heroe heroe = this.heroes.get(herosRandom);
 
-                    if (enemigo.isVivo()) {
-                        enemigo.atacar(heroe);
-                        IO.println("El enemigo " + enemigo.getNombre() + "atacó al héroe "+ heroe.getNombre());
-                    }
-
-                    break;
-
-                } catch (Exception e) {
-                    continue;
-                }
+            if (enemigo.isVivo()) {
+                enemigo.atacar(heroe);
+                IO.println("El enemigo " + enemigo.getNombre() + "atacó al héroe "+ heroe.getNombre());
             }
 
 
