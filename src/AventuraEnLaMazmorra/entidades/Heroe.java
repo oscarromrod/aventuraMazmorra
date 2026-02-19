@@ -118,6 +118,10 @@ public class Heroe extends Personaje{
 
         }
     }
+    public ArrayList<Item> agregarItemInventario(Item item){
+        this.inventario.add(item);
+        return inventario;
+    }
 
     @Override
     public void usarHabilidadEspecial(Personaje objetivo, ArrayList<Personaje> personajes) {

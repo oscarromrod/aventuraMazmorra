@@ -110,8 +110,6 @@ public abstract class Personaje {
             }
         }
 
-
-
     }
 
     public boolean estaVivo(){
