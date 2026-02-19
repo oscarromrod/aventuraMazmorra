@@ -1,4 +1,8 @@
-package AventuraEnLaMazmorra.entidades;
+package AventuraEnLaMazmorra.Servicios;
+
+import AventuraEnLaMazmorra.entidades.Enemigo;
+import AventuraEnLaMazmorra.entidades.Heroe;
+import AventuraEnLaMazmorra.entidades.Sala;
 
 import java.util.ArrayList;
 
@@ -6,10 +10,10 @@ public class Combate {
 
 
     private ArrayList<Heroe> heroes;
-    private  Sala sala;
-    private  int turno;
+    private Sala sala;
+    private  Integer turno;
 
-    public Combate(Sala sala, int turno) {
+    public Combate(Sala sala, Integer turno) {
         this.sala = sala;
         this.turno = turno;
 
