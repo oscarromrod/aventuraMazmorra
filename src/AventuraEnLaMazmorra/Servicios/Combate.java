@@ -38,7 +38,6 @@ public class Combate {
                 break;
             }
 
-
             this.turnoEnemigos();
 
 
