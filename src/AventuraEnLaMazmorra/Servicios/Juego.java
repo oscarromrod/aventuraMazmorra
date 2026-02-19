@@ -42,8 +42,6 @@ public class Juego {
         Item pocionGrande1 = new Item("Pocion grande", TipoItem.POCION_GRANDE);
         Item pocionElixir1 = new Item("Elixir", TipoItem.ELIXIR);
 
-
-
      }
 
 
