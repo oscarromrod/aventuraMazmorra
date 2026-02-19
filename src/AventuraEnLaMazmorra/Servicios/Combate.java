@@ -79,7 +79,7 @@ public class Combate {
             todoEnemigosEstaMuertos = !enemigo.estaVivo();
         }
 
-        return todoHeroesEstaMuertos || todoEnemigosEstaMuertos ;
+        return todoHeroesEstaMuertos || todoEnemigosEstaMuertos;
     }
 
 
