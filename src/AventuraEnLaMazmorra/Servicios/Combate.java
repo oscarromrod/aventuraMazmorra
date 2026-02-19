@@ -62,7 +62,7 @@ public class Combate {
             IO.println(enemigo.getNombre() + ": " + enemigo.getPuntosVidaActual() + " HP");
 
         }
-        IO.println("*****************************************************");
+        IO.println("******************************************************");
     }
 
 
