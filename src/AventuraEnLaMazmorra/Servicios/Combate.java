@@ -52,7 +52,6 @@ public class Combate {
     }
 
 
-
     public void turnoHeroes() {
 
         for (Heroe hero : this.heroes) {
