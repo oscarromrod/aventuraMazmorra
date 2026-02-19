@@ -69,8 +69,17 @@ public class Combate {
 
     public boolean combateTerminado() {
 
+        boolean todoHeroesEstaMuertos = true,todoEnemigosEstaMuertos = true;
 
-        return false ;
+        for (Heroe hero : this.heroes) {
+            todoHeroesEstaMuertos = !hero.estaVivo();
+        }
+
+        for (Enemigo enemigo : this.sala.getEnemigos()) {
+            todoEnemigosEstaMuertos = !enemigo.estaVivo();
+        }
+
+        return todoHeroesEstaMuertos || todoEnemigosEstaMuertos ;
     }
 
 
