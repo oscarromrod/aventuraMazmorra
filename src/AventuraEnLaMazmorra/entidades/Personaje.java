@@ -115,7 +115,7 @@ public abstract class Personaje {
     }
 
     public boolean estaVivo(){
-            return this.vivo;
+        return this.vivo;
     }
 
     public abstract void usarHabilidadEspecial(Personaje objetivo, ArrayList<Personaje> personajes);
