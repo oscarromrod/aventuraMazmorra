@@ -24,8 +24,7 @@ public class Combate {
 
     public void iniciarCombate() {
 
-        boolean prueba = true;
-        do{
+        while (true) {
             IO.println("Turno " + this.turno);
 
             this.mostrarEstadoCombate();
@@ -34,7 +33,6 @@ public class Combate {
 
 
             if (this.combateTerminado()) {
-                prueba  = false;
                 break;
             }
 
@@ -42,11 +40,10 @@ public class Combate {
 
 
             if (this.combateTerminado()) {
-                prueba = false;
                 break;
             }
             this.turno++;
-        }while (prueba = true);
+        };
 
 
         if (this.sala.getEnemigosVivos().size() <= 0) {
@@ -120,19 +117,23 @@ public class Combate {
 
     public boolean combateTerminado() {
 
-        boolean todoHeroesEstaMuertos = false ,todoEnemigosEstaMuertos = false;
+        boolean todoHeroesEstaMuertos = true ,todoEnemigosEstaMuertos = true;
 
         for (Heroe hero : this.heroes) {
 
-            if (!hero.estaVivo()) {
-                todoHeroesEstaMuertos = true;
+            if (hero.estaVivo()) {
+                todoHeroesEstaMuertos = false;
+                break;
             }
         }
 
         for (Enemigo enemigo : this.sala.getEnemigos()) {
 
-            if (!enemigo.estaVivo()) {
-                todoEnemigosEstaMuertos = true;
+
+
+            if (enemigo.estaVivo()) {
+                todoEnemigosEstaMuertos = false;
+                break;
             }
         }
 
@@ -161,7 +162,7 @@ public class Combate {
 
             for (Heroe hero : heroesViven) {
                 hero.ganarExperiencia(gananExp);
-                IO.println(hero.getNombre() +" : gana puntos es "+ hero.getExperiencia() +" exp");
+                IO.println(hero.getNombre() +" : gana puntos es "+ gananExp +" exp");
             }
 
             this.heroes.addAll(heroesViven);

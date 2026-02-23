@@ -29,7 +29,7 @@ public class Juego {
 
     //------------METODOS--------------
 
-     public void inicializarJuego(){
+    public void inicializarJuego(){
 
         Sala sala1 = new Sala(1);
         Sala sala2 = new Sala(2);
@@ -71,20 +71,21 @@ public class Juego {
         arquero1.agregarItemInventario(pocionGrande);
         arquero1.agregarItemInventario(pocionElixir);
 
-     }
+    }
 
 
-     public void jugar(){
-        IO.println("Dime una opcion 1 - 5" );
-        IO.println("1. Mostrar menu entre salas");
-        IO.println("2.Entrar en la sala actual");
-        IO.println("3.Iniciar combate");
-        IO.println("4.Verificar resultado");
-        IO.println("5. Avanzar a la siguiente sala");
-        opcion = sc.nextInt();
+    public void jugar(){
+
 
 
         do {
+            IO.println("Dime una opcion 1 - 5" );
+            IO.println("1. Mostrar menu entre salas");
+            IO.println("2.Entrar en la sala actual");
+            IO.println("3.Iniciar combate");
+            IO.println("4.Verificar resultado");
+            IO.println("5. Avanzar a la siguiente sala");
+            opcion = sc.nextInt();
 
             switch (opcion) {
 
@@ -98,27 +99,25 @@ public class Juego {
                     salas.get(SalaActual);
                 }
                 case 3 -> {
-                    for (int i = 0; i < salas.size(); i++) {
-                        Combate combate1 = new Combate(salas.get(i), equipo);
-                        combate1.iniciarCombate();
-                        SalaActual = i;
-                    }
+                    Combate combate1 = new Combate(salas.get(SalaActual), equipo);
+                    combate1.iniciarCombate();
 
                 }
                 case 4 -> {
-
+                    jugar();
+                    opcion = 5;
 
                 }
 
             }
         }while (opcion != 1);
         opcion = 0;
-     }
+    }
 
-     public void enEntreSalas(){
+    public void enEntreSalas(){
 
         do {
-           IO.println("Menú entre salas");
+            IO.println("Menú entre salas");
             IO.println("1. VerEquipo");
             IO.println("2. UsarPociones");
             IO.println("3. Descansar");
@@ -140,7 +139,6 @@ public class Juego {
 
                 case 4:
                     jugar();
-                    opcion = 5;
 
                 default:
                     IO.println("Numero incorrecto");
@@ -150,7 +148,7 @@ public class Juego {
         }while (opcion != 5);
         opcion=0;
 
-     }
+    }
 
 
 
@@ -165,14 +163,14 @@ public class Juego {
     }
 
 
-     public void mosrtarResultadoFInal(){
+    public void mosrtarResultadoFInal(){
         IO.println("JUEGO TERMINADO");
         if (this.hayHeroeVivo()){
             IO.println("Los heroes ganan");
         } else {
             IO.println("Los enemigos ganan");
         }
-     }
+    }
 
 
 }
