@@ -87,6 +87,7 @@ public class Juego {
 
 
         do {
+
             IO.println("Dime una opcion 1 - 5" );
             IO.println("1. Mostrar menu entre salas");
             IO.println("2.Entrar en la sala actual");

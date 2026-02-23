@@ -71,6 +71,7 @@ public class Sala {
                     Enemigo Orco = new Enemigo("Paco",TipoEnemigo.ORCO);
                     Enemigo glb2 = new Enemigo("Paco2",TipoEnemigo.GOBLIN);
 
+
                     this.enemigos.add(Orco);
                     this.enemigos.add(glb2);
 

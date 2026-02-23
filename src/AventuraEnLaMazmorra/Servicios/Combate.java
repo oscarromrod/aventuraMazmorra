@@ -75,6 +75,7 @@ public class Combate {
             }
 
         }
+
     }
 
     public void turnoEnemigos() {
