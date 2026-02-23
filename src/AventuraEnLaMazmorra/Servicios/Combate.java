@@ -24,7 +24,13 @@ public class Combate {
 
     public void iniciarCombate() {
 
+
         while (true) {
+
+            if (this.combateTerminado()) {
+                break;
+            }
+
             IO.println("Turno " + this.turno);
 
             this.mostrarEstadoCombate();
@@ -32,16 +38,17 @@ public class Combate {
             this.turnoHeroes();
 
 
-            if (this.combateTerminado()) {
+            if (this.sala.todosENemigosMuertos()) {
                 break;
             }
 
             this.turnoEnemigos();
 
 
-            if (this.combateTerminado()) {
+            if (this.sala.todosENemigosMuertos()) {
                 break;
             }
+
             this.turno++;
         };
 
@@ -148,6 +155,7 @@ public class Combate {
         try {
             for (Enemigo enemigo : this.sala.getEnemigos()) {
                 sumExperncia += enemigo.getExpOtorgada();
+
             }
 
 
@@ -157,8 +165,7 @@ public class Combate {
                 }
             }
 
-
-            gananExp = sumExperncia / heroesViven.size();
+            gananExp = (int) sumExperncia / heroesViven.size();
 
             for (Heroe hero : heroesViven) {
                 hero.ganarExperiencia(gananExp);

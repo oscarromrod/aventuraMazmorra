@@ -90,8 +90,13 @@ public abstract class Personaje {
     //---------------METODOS-----------------
 
     public void atacar(Personaje objetivo){
-        this.ataque  = (ataque + 1) - objetivo.defensa;
+        int dano = this.ataque - objetivo.getDefensa();
 
+        if (dano < 1) {
+            dano = 1;
+        }
+
+        objetivo.recibirDanio(dano);
     }
 
     public void recibirDanio(Integer danio){

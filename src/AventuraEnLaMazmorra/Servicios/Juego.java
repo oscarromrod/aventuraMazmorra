@@ -15,7 +15,7 @@ public class Juego {
 
     private ArrayList<Heroe> equipo = new ArrayList<>();
     private ArrayList<Sala> salas = new ArrayList<>();
-    private Integer SalaActual = 1;
+    private Integer SalaActual = 0;
     private Boolean juegoTerminado;
     int opcion = 0;
     Scanner sc = new Scanner(System.in);
@@ -50,13 +50,21 @@ public class Juego {
         Heroe arquero1 = new Heroe("Moha", TipoHeroe.ARQUERO);
 
         IO.println("Creando equipo predetrminado ...");
-        equipo.add(guerrero1);
-        equipo.add(mago1);
-        equipo.add(arquero1);
+
 
         Item pocionPequena = new Item("Pocion pequeña", TipoItem.POCION_PEQUENA);
         Item pocionGrande = new Item("Pocion grande", TipoItem.POCION_GRANDE);
         Item pocionElixir = new Item("Elixir", TipoItem.ELIXIR);
+
+        guerrero1.usarItem(pocionPequena);
+        guerrero1.usarItem(pocionGrande);
+        guerrero1.usarItem(pocionElixir);
+
+
+        equipo.add(guerrero1);
+        equipo.add(mago1);
+        equipo.add(arquero1);
+
 
         IO.println("Agregando pociones al inventario ...");
         guerrero1.agregarItemInventario(pocionPequena);
@@ -104,8 +112,6 @@ public class Juego {
 
                 }
                 case 4 -> {
-                    jugar();
-                    opcion = 5;
 
                 }
 

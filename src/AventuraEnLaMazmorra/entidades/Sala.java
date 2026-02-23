@@ -46,11 +46,22 @@ public class Sala {
                 if (num == 2){
                     Enemigo glb1 = new Enemigo("Paco",TipoEnemigo.GOBLIN);
                     Enemigo glb2 = new Enemigo("Paco2",TipoEnemigo.GOBLIN);
+
+                    this.enemigos.add(glb1);
+                    this.enemigos.add(glb2);
+
+
                 }else if (num == 3){
                     Enemigo glb1 = new Enemigo("Paco",TipoEnemigo.GOBLIN);
                     Enemigo glb2 = new Enemigo("Paco2",TipoEnemigo.GOBLIN);
                     Enemigo glb3 = new Enemigo("Paco3",TipoEnemigo.GOBLIN);
+
+                    this.enemigos.add(glb1);
+                    this.enemigos.add(glb2);
+                    this.enemigos.add(glb3);
                 }
+
+
 
             }
             case 3,4 ->{
@@ -59,10 +70,18 @@ public class Sala {
                 if (num == 1){
                     Enemigo Orco = new Enemigo("Paco",TipoEnemigo.ORCO);
                     Enemigo glb2 = new Enemigo("Paco2",TipoEnemigo.GOBLIN);
+
+                    this.enemigos.add(Orco);
+                    this.enemigos.add(glb2);
+
                 }else if (num == 2){
                     Enemigo glb1 = new Enemigo("Paco",TipoEnemigo.GOBLIN);
                     Enemigo Orco = new Enemigo("Paco2",TipoEnemigo.ORCO);
                     Enemigo Orco1 = new Enemigo("Paco3",TipoEnemigo.ORCO);
+
+                    this.enemigos.add(glb1);
+                    this.enemigos.add(Orco);
+                    this.enemigos.add(Orco1);
                 }
 
             }
@@ -70,6 +89,11 @@ public class Sala {
                 Enemigo Dragon = new Enemigo("Paco",TipoEnemigo.DRAGON);
                 Enemigo Orco = new Enemigo("Paco2",TipoEnemigo.ORCO);
                 Enemigo Orco1 = new Enemigo("Paco3",TipoEnemigo.ORCO);
+
+
+                this.enemigos.add(Dragon);
+                this.enemigos.add(Orco);
+                this.enemigos.add(Orco1);
 
             }
 
