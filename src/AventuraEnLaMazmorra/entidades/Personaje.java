@@ -104,7 +104,6 @@ public abstract class Personaje {
         }
     }
 
-    //FALTA LIMITAR PARA QUE NO PASE DEL MAXIMO DE VIDA!!!!!
     public void curar(Integer cantidad){
         if (this.puntosVidaActual > 0){
             this.puntosVidaActual += cantidad;
@@ -116,10 +115,7 @@ public abstract class Personaje {
     }
 
     public boolean estaVivo(){
-        if (this.vivo){
-            return true;
-        }
-        return false;
+            return this.vivo;
     }
 
     public abstract void usarHabilidadEspecial(Personaje objetivo, ArrayList<Personaje> personajes);
