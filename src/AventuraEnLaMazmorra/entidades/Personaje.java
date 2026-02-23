@@ -90,20 +90,18 @@ public abstract class Personaje {
     //---------------METODOS-----------------
 
     public void atacar(Personaje objetivo){
-        int dano = this.ataque - objetivo.getDefensa();
-        if(dano > 1){
-            objetivo.recibirDanio(dano);
-        }
+        this.ataque  = (ataque + 1) - objetivo.defensa;
 
     }
 
     public void recibirDanio(Integer danio){
         this.puntosVidaActual -= danio;
         if (this.puntosVidaActual <= 0){
-            this.vivo = false;
+            this.vivo = true;
         }
     }
 
+    //FALTA LIMITAR PARA QUE NO PASE DEL MAXIMO DE VIDA!!!!!
     public void curar(Integer cantidad){
         if (this.puntosVidaActual > 0){
             this.puntosVidaActual += cantidad;
@@ -115,7 +113,10 @@ public abstract class Personaje {
     }
 
     public boolean estaVivo(){
-        return this.vivo;
+        if (this.vivo){
+            return true;
+        }
+        return false;
     }
 
     public abstract void usarHabilidadEspecial(Personaje objetivo, ArrayList<Personaje> personajes);
